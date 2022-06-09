@@ -1,14 +1,15 @@
 import React from 'react'
 import './Navbar.css'
-function Navbar({user}) {
+function Navbar(props) {
+  const user=props.user
   return (
     <div className='navbar'>
         <span className='logo'>new app</span>
         <ul className='list'>
             <li className="listItem">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTG1dXcbGQTvqLXLBEQnr3S2ta1flJNUUc6kw&usqp=CAU" alt="" className="avatar" />
+               {user? <img src={user?.photos[0].value} className="avatar" />:""}
             </li>
-            <li className="listItem">{user.usename}</li>
+            <li className="listItem">{user?.displayName}</li>
             <li className="listItem">Log Out</li>
         </ul>
     </div>

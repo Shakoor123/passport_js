@@ -1,11 +1,18 @@
 import React, { useEffect } from 'react'
-import image from '../images/3.jpeg'
+
+
 import './Login.css'
 function Login() {
 
 
     const google = () => {
         window.open("http://localhost:5000/auth/google", "_self");
+      };
+      const github = () => {
+        window.open("http://localhost:5000/auth/github", "_self");
+      };
+      const facebook = () => {
+        window.open("http://localhost:5000/auth/facebook", "_self");
       };
   return (
     <div>
@@ -14,15 +21,12 @@ function Login() {
             <div className="wrapper">
                 <div className="left">
                     <div className="loginButton google" onClick={google}>
-                        <img src={image} alt="" className="icon" />
                         Google
                     </div>
-                    <div className="loginButton facebook">
-                        <img src={image} alt="" className="icon" />
+                    <div className="loginButton facebook" onClick={facebook}>
                         Facebook
                     </div>
-                    <div className="loginButton github">
-                        <img src={image} alt="" className="icon" />
+                    <div className="loginButton github" onClick={github}>
                         Github
                     </div>
                 </div>
